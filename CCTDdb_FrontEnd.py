@@ -1,6 +1,6 @@
 from tkinter import*
 import tkinter.messagebox
-import stdDatabase
+import CCTDdb_BackEnd
 
 class Patient:
     def __init__(self, root):
@@ -9,14 +9,23 @@ class Patient:
         self.root.geometry("1350x750+0+0")
         self.root.config(bg="cadet blue")
         
-        StdID = StringVar ()
+        PntID = StringVar ()
         Firstname = StringVar ()
         Surname = StringVar ()
+        DoB= StringVar()
         Age = StringVar ()
         Gender = StringVar ()
         Address = StringVar ()
-        Mobile = StringVar ()
-        #=========================FRAME=================================
+        MobileNo = StringVar ()
+        LastPersonContact=StringVar()
+
+        #==========================FUNCTION================================
+        def iExit():
+            iExit = tkinter.messagebox.askyesno("Covid Contact Tracing Database Management System", "Confirm if you want to exit")
+            if iExit > 0:
+                root.destroy()
+                return
+    #=========================FRAME=================================
         MainFrame = Frame(self.root, bg="cadet blue")
         MainFrame.grid()
 
@@ -40,49 +49,49 @@ class Patient:
                                     font=('arial', 20,'bold'), text="Patient List Details\n")
         DataFrameRIGHT.pack(side=RIGHT)
         #==================Labels and Entry Widget==================
-        self.lblStdID = Label(DataFrameLEFT, font=('arial', 20, 'bold'), text="Patient ID:",padx=2, pady=2,bg="Ghost White")
-        self.lblStdID.grid(row=0, column=0, sticky=W)
-        self.txtStdID = Entry(DataFrameLEFT, font=('arial', 20, 'bold'), textvariable=StdID,width=39)
-        self.txtStdID.grid(row=0, column=1)
+        self.lblPntID = Label(DataFrameLEFT, font=('arial', 20, 'bold'), text="Patient ID:",padx=2, pady=2,bg="Ghost White")
+        self.lblPntID.grid(row=0, column=0, sticky=W)
+        self.txtPntID = Entry(DataFrameLEFT, font=('arial', 20, 'bold'), textvariable=PntID,width=39)
+        self.txtPntID.grid(row=0, column=1)
 
         self.lblfna = Label(DataFrameLEFT, font=('arial', 20, 'bold'), text="First Name:",padx=2, pady=2,bg="Ghost White")
         self.lblfna.grid(row=1, column=0, sticky=W)
-        self.txtfna = Entry(DataFrameLEFT, font=('arial', 20, 'bold'), textvariable=StdID,width=39)
+        self.txtfna = Entry(DataFrameLEFT, font=('arial', 20, 'bold'), textvariable=Firstname,width=39)
         self.txtfna.grid(row=1, column=1)
 
         self.lblSna = Label(DataFrameLEFT, font=('arial', 20, 'bold'), text="Surname:",padx=2, pady=2,bg="Ghost White")
         self.lblSna.grid(row=2, column=0, sticky=W)
-        self.txtSna = Entry(DataFrameLEFT, font=('arial', 20, 'bold'), textvariable=StdID,width=39)
+        self.txtSna = Entry(DataFrameLEFT, font=('arial', 20, 'bold'), textvariable=Surname,width=39)
         self.txtSna.grid(row=2, column=1)
 
         self.lblDob = Label(DataFrameLEFT, font=('arial', 20, 'bold'), text="Date of Birth:",padx=2, pady=2,bg="Ghost White")
         self.lblDob.grid(row=3, column=0, sticky=W)
-        self.txtDob = Entry(DataFrameLEFT, font=('arial', 20, 'bold'), textvariable=StdID,width=39)
+        self.txtDob = Entry(DataFrameLEFT, font=('arial', 20, 'bold'), textvariable=DoB,width=39)
         self.txtDob.grid(row=3, column=1)
 
         self.lblAge = Label(DataFrameLEFT, font=('arial', 20, 'bold'), text="Age:",padx=2, pady=2,bg="Ghost White")
         self.lblAge.grid(row=4, column=0, sticky=W)
-        self.txtAge = Entry(DataFrameLEFT, font=('arial', 20, 'bold'), textvariable=StdID,width=39)
+        self.txtAge = Entry(DataFrameLEFT, font=('arial', 20, 'bold'), textvariable=Age,width=39)
         self.txtAge.grid(row=4, column=1)
 
         self.lblGender = Label(DataFrameLEFT, font=('arial', 20, 'bold'), text="Gender:",padx=2, pady=2,bg="Ghost White")
         self.lblGender.grid(row=5, column=0, sticky=W)
-        self.txtGender = Entry(DataFrameLEFT, font=('arial', 20, 'bold'), textvariable=StdID,width=39)
+        self.txtGender = Entry(DataFrameLEFT, font=('arial', 20, 'bold'), textvariable=Gender,width=39)
         self.txtGender.grid(row=5, column=1)
 
         self.lblAdr = Label(DataFrameLEFT, font=('arial', 20, 'bold'), text="Address:",padx=2, pady=2,bg="Ghost White")
         self.lblAdr.grid(row=6, column=0, sticky=W)
-        self.txtAdr = Entry(DataFrameLEFT, font=('arial', 20, 'bold'), textvariable=StdID,width=39)
+        self.txtAdr = Entry(DataFrameLEFT, font=('arial', 20, 'bold'), textvariable=Address,width=39)
         self.txtAdr.grid(row=6, column=1)
 
         self.lblMono = Label(DataFrameLEFT, font=('arial', 20, 'bold'), text="Mobile No:",padx=2, pady=2,bg="Ghost White")
         self.lblMono.grid(row=7, column=0, sticky=W)
-        self.txtMono = Entry(DataFrameLEFT, font=('arial', 20, 'bold'), textvariable=StdID,width=39)
+        self.txtMono = Entry(DataFrameLEFT, font=('arial', 20, 'bold'), textvariable=MobileNo,width=39)
         self.txtMono.grid(row=7, column=1)
 
         self.lblMono = Label(DataFrameLEFT, font=('arial', 20, 'bold'), text="Last Person Contact:",padx=2, pady=2,bg="Ghost White")
         self.lblMono.grid(row=8, column=0, sticky=W)
-        self.txtMono = Entry(DataFrameLEFT, font=('arial', 20, 'bold'), textvariable=StdID,width=39)
+        self.txtMono = Entry(DataFrameLEFT, font=('arial', 20, 'bold'), textvariable=LastPersonContact,width=39)
         self.txtMono.grid(row=8, column=1)
         #===================================ListBox & ScrollBar Widget==================================
         scrollbar = Scrollbar(DataFrameRIGHT)
@@ -110,7 +119,7 @@ class Patient:
         self.btnUpdateData = Button(ButtonFrame, text="Update",font=('arial', 20, 'bold'), height=1,width=10,bd=4)
         self.btnUpdateData.grid(row=0, column=5)
 
-        self.btnExit = Button(ButtonFrame, text="Exit",font=('arial', 20, 'bold'), height=1,width=10,bd=4)
+        self.btnExit = Button(ButtonFrame, text="Exit",font=('arial', 20, 'bold'), height=1,width=10,bd=4, command = iExit)
         self.btnExit.grid(row=0, column=6)
 
 
