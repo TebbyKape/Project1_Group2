@@ -54,6 +54,7 @@ class Patient:
             global sd
             searchPnt = Patientlist.curselection()[0]
             sd=Patientlist.get(searchPnt)
+
             self.txtPntID.delete(0,END)
             self.txtPntID.insert(END,sd[1])
             self.txtfna.delete(0,END)
