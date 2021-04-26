@@ -36,4 +36,12 @@ def searchData(PntID="", Firstname="", Surname="", DoB="", Age="", Gender="", Ad
     con.commit()
     con.close()
 
+def UpdateData(id, PntID="", Firstname="", Surname="", DoB="", Age="", Gender="", Address="",Mobile="", LastPersonContact=""):
+    con=sqlite3.connect("patient.db")
+    cur = con.cursor()
+    cur.execute("UPDATE patient Set Pntid=?, Firstname=?, Surname=?, DoB=?, Age=?, Gender=?, Address=?, Mobile=?, \
+    LastPersonContact=?, WHERE id=?", (PntID, Firstname, Surname, DoB, Age, Gender, Address, Mobile, LastPersonContact,id))
+    con.commit()
+    con.close()
+
 PatientData()
