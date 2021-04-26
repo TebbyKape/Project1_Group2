@@ -44,6 +44,7 @@ class Patient:
                 Patientlist.delete(0,END)
                 Patientlist.insert(END,PntID.get(), Firstname.get(), Surname.get(), DoB.get(), Age.get(), Gender.get(), Address.get(), \
                         MoNo.get(), LastPersonContact.get())
+
         def displayData():
             Patientlist.delete(0,END)
             for row in CCTDdb_BackEnd.viewData():
@@ -73,7 +74,7 @@ class Patient:
             self.txtLastPC.insert(END,sd[9])
 
         def deleteData():
-            if(len(PntID.get())!=0) :
+            if(len(PntID.get())!=0):
                 CCTDdb_BackEnd.deleteRec(sd[0])
                 clearData()
                 displayData()

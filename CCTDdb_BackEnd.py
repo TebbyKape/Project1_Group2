@@ -12,7 +12,8 @@ def PatientData():
 def AddPntRec(PntID, Firstname, Surname, DoB, Age, Gender, Address, MoNo, LastPersonContact):
      con=lite.connect("patient.db")
      cur = con.cursor()
-     cur.execute("INSERT INTO patient VALUES (NULL, ?,?,?,?,?,?,?,?,?,)",(PntID, Firstname, Surname, DoB, Age, Gender, Address, MoNo, LastPersonContact))
+     cur.execute("INSERT INTO patient VALUES (NULL,?,?,?,?,?,?,?,?,?)", \
+         (PntID, Firstname, Surname, DoB, Age, Gender, Address, MoNo, LastPersonContact))
      con.commit()
      con.close()
 
@@ -20,12 +21,12 @@ def viewData():
     con=lite.connect("patient.db")
     cur = con.cursor()
     cur.execute("SELECT * FROM patient")
-    row = cur.fetchall()
+    rows = cur.fetchall()
     con.commit()
     con.close()
     return rows
 
-def deleteRec():
+def deleteRec(id):
     con=lite.connect("patient.db")
     cur = con.cursor()
     cur.execute("DELETE FROM patient WHERE id=?", (id,))
@@ -36,15 +37,16 @@ def searchData(PntID="", Firstname="", Surname="", DoB="", Age="", Gender="", Ad
     con=lite.connect("patient.db")
     cur = con.cursor()
     cur.execute("SELECT * FROM patient WHERE Pntid=? OR Firstname=? OR Surname=? OR DoB=? OR Age=? OR Gender=? OR Address=? \
-        OR MoNo=? OR LastPersonContact=?", (PntID, Firstname, Surname, DoB, Age, Gender, Address, MoNo, LastPersonContact,id))
+        OR MoNo=? OR LastPersonContact=?",(PntID, Firstname, Surname, DoB, Age, Gender, Address, MoNo, LastPersonContact))
+    rows=cur.fetchall
     con.commit()
     con.close()
 
 def UpdateData(id, PntID="", Firstname="", Surname="", DoB="", Age="", Gender="", Address="",MoNo="", LastPersonContact=""):
     con=lite.connect("patient.db")
     cur = con.cursor()
-    cur.execute("UPDATE patient Set Pntid=?, Firstname=?, Surname=?, DoB=?, Age=?, Gender=?, Address=?, MoNo?, \
-        LastPersonContact=?, WHERE id=?", (PntID, Firstname, Surname, DoB, Age, Gender, Address, MoNo, LastPersonContact,id))
+    cur.execute("UPDATE patient SET Pntid=?, Firstname=?, Surname=?, DoB=?, Age=?, Gender=?, Address=?, MoNo?, \
+        LastPersonContact=?, WHERE id=?",(PntID, Firstname, Surname, DoB, Age, Gender, Address, MoNo, LastPersonContact,id))
     con.commit()
     con.close()
 
