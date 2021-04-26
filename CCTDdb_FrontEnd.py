@@ -172,7 +172,7 @@ class Patient:
 
         Patientlist = Listbox(DataFrameRIGHT, width=41, height=16, font=('arial', 12, 'bold'), yscrollcommand=scrollbar.set)
         Patientlist.bind('<<ListboxSelect>>', PatientRec)
-        Patientlist.grid(row=0, column=0, padx=8)
+        Patientlist.grid(row=0, column=0, padx=9)
         scrollbar.config(command = Patientlist.yview)
 
         #===================================Button Widget==================================
