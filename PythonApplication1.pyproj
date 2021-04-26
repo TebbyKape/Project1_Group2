@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>12927865-b9a6-45d3-94c8-1e88b4afd3e6</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>CCTD_Database_FrontEnd.py</StartupFile>
+    <StartupFile>CCTDdb_FrontEnd.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,7 +22,10 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="CCTD_Database_FrontEnd.py" />
+    <Compile Include="CCTDdb_BackEnd.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CCTDdb_FrontEnd.py" />
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="Global|PythonCore|3.9" />

@@ -1,6 +1,6 @@
 from tkinter import*
 import tkinter.messagebox
-#import stdDatabase
+import stdDatabase
 
 class Patient:
     def __init__(self, root):
@@ -37,7 +37,7 @@ class Patient:
         DataFrameLEFT.pack(side=LEFT)
 
         DataFrameRIGHT = LabelFrame(DataFrame, bd=1, width=450, height=300, padx=31, pady=3, relief=RIDGE, bg="Ghost White",
-                                    font=('arial', 20,'bold'), text="Patient Details\n")
+                                    font=('arial', 20,'bold'), text="Patient List Details\n")
         DataFrameRIGHT.pack(side=RIGHT)
         #==================Labels and Entry Widget==================
         self.lblStdID = Label(DataFrameLEFT, font=('arial', 20, 'bold'), text="Patient ID:",padx=2, pady=2,bg="Ghost White")
@@ -70,16 +70,49 @@ class Patient:
         self.txtGender = Entry(DataFrameLEFT, font=('arial', 20, 'bold'), textvariable=StdID,width=39)
         self.txtGender.grid(row=5, column=1)
 
-        self.lblSna = Label(DataFrameLEFT, font=('arial', 20, 'bold'), text="Surname:",padx=2, pady=2,bg="Ghost White")
-        self.lblSna.grid(row=6, column=0, sticky=W)
-        self.txtSna = Entry(DataFrameLEFT, font=('arial', 20, 'bold'), textvariable=StdID,width=39)
-        self.txtSna.grid(row=6, column=1)
+        self.lblAdr = Label(DataFrameLEFT, font=('arial', 20, 'bold'), text="Address:",padx=2, pady=2,bg="Ghost White")
+        self.lblAdr.grid(row=6, column=0, sticky=W)
+        self.txtAdr = Entry(DataFrameLEFT, font=('arial', 20, 'bold'), textvariable=StdID,width=39)
+        self.txtAdr.grid(row=6, column=1)
 
-        self.lblSna = Label(DataFrameLEFT, font=('arial', 20, 'bold'), text="Surname:",padx=2, pady=2,bg="Ghost White")
-        self.lblSna.grid(row=7, column=0, sticky=W)
-        self.txtSna = Entry(DataFrameLEFT, font=('arial', 20, 'bold'), textvariable=StdID,width=39)
-        self.txtSna.grid(row=7, column=1)
-        
+        self.lblMono = Label(DataFrameLEFT, font=('arial', 20, 'bold'), text="Mobile No:",padx=2, pady=2,bg="Ghost White")
+        self.lblMono.grid(row=7, column=0, sticky=W)
+        self.txtMono = Entry(DataFrameLEFT, font=('arial', 20, 'bold'), textvariable=StdID,width=39)
+        self.txtMono.grid(row=7, column=1)
+
+        self.lblMono = Label(DataFrameLEFT, font=('arial', 20, 'bold'), text="Last Person Contact:",padx=2, pady=2,bg="Ghost White")
+        self.lblMono.grid(row=8, column=0, sticky=W)
+        self.txtMono = Entry(DataFrameLEFT, font=('arial', 20, 'bold'), textvariable=StdID,width=39)
+        self.txtMono.grid(row=8, column=1)
+        #===================================ListBox & ScrollBar Widget==================================
+        scrollbar = Scrollbar(DataFrameRIGHT)
+        scrollbar.grid(row=0, column=1, sticky='ns')
+
+        Patientlist = Listbox(DataFrameRIGHT, width=41, height=16, font=('arial', 12, 'bold'), yscrollcommand=scrollbar.set)
+        Patientlist.grid(row=0, column=0, padx=8)
+        scrollbar.config(command = Patientlist.yview)
+        #===================================Button Widget==================================
+        self.btnAddData = Button(ButtonFrame, text="Add New",font=('arial', 20, 'bold'), height=1,width=10,bd=4)
+        self.btnAddData.grid(row=0, column=0)
+
+        self.btnDisplayData = Button(ButtonFrame, text="Display",font=('arial', 20, 'bold'), height=1,width=10,bd=4)
+        self.btnDisplayData.grid(row=0, column=1)
+
+        self.btnClearData = Button(ButtonFrame, text="Clear",font=('arial', 20, 'bold'), height=1,width=10,bd=4)
+        self.btnClearData.grid(row=0, column=2)
+
+        self.btnDeleteData = Button(ButtonFrame, text="Delete",font=('arial', 20, 'bold'), height=1,width=10,bd=4)
+        self.btnDeleteData.grid(row=0, column=3)
+
+        self.btnSearchData = Button(ButtonFrame, text="Search",font=('arial', 20, 'bold'), height=1,width=10,bd=4)
+        self.btnSearchData.grid(row=0, column=4)
+
+        self.btnUpdateData = Button(ButtonFrame, text="Update",font=('arial', 20, 'bold'), height=1,width=10,bd=4)
+        self.btnUpdateData.grid(row=0, column=5)
+
+        self.btnExit = Button(ButtonFrame, text="Exit",font=('arial', 20, 'bold'), height=1,width=10,bd=4)
+        self.btnExit.grid(row=0, column=6)
+
 
 
 
