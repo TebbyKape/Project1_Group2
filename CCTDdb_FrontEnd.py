@@ -196,6 +196,17 @@ class Patient:
 
         self.btnExit = Button(ButtonFrame, text="Exit",font=('arial', 20, 'bold'), height=1,width=10,bd=4, command = iExit)
         self.btnExit.grid(row=0, column=6)
+        
+        master = Tk()
+        master.minsize(300,100)
+        master.geometry("540x960")
+
+        def callback():
+            print ("click!")
+
+        photo=PhotoImage(file="milktea.jpg")
+        b = Button(master,image=photo, command=callback, height=50, width=150)
+        b.pack()
 
 
 if __name__=='__main__':
