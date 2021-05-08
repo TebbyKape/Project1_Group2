@@ -36,11 +36,11 @@ def deleteRec(id):
 def searchData(PntID="", Firstname="", Surname="", DoB="", Age="", Gender="", Address="",MoNo="", LastPersonContact=""):
     con=lite.connect("patient.db")
     cur = con.cursor()
-    cur.execute("SELECT * FROM patient WHERE Pntid=? OR Firstname=? OR Surname=? OR DoB=? OR Age=? OR Gender=? OR Address=? OR MoNo=? OR LastPersonContact=?",\
+    cur.execute("SELECT * FROM patient WHERE PntID=? OR Firstname=? OR Surname=? OR DoB=? OR Age=? OR Gender=? OR Address=? OR MoNo=? OR LastPersonContact=?",\
         (PntID, Firstname, Surname, DoB, Age, Gender, Address, MoNo, LastPersonContact))
-    rows=cur.fetchall
-    con.commit()
+    rows=cur.fetchall()
     con.close()
+    return rows
 
 def UpdateData(id, PntID="", Firstname="", Surname="", DoB="", Age="", Gender="", Address="",MoNo="", LastPersonContact=""):
     con=lite.connect("patient.db")

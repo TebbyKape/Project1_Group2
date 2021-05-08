@@ -82,8 +82,8 @@ class Patient:
 
         def SearchData():
             Patientlist.delete(0,END)
-            for row in CCTDdb_BackEnd.searchData(PntID.get(), Firstname.get(), Surname.get(), DoB.get(), Age.get(), Gender.get(), Address.get(), \
-                        MoNo.get(), LastPersonContact.get()):
+            for row in CCTDdb_BackEnd.searchData(PntID.get(), Firstname.get(), Surname.get(), DoB.get(), Age.get(), Gender.get(), Address.get(),\
+               MoNo.get(), LastPersonContact.get()):
                 Patientlist.insert(END,row,str(""))
 
         def update():
@@ -204,9 +204,7 @@ class Patient:
         def callback():
             print ("click!")
 
-        photo=PhotoImage(file="milktea.jpg")
-        b = Button(master,image=photo, command=callback, height=50, width=150)
-        b.pack()
+       
 
 
 if __name__=='__main__':
