@@ -113,21 +113,19 @@ class Patient:
                                     font=('Arial', 20,'bold'), text="Patient List Details\n")
         ListFrame.pack(side=TOP)
         
-        ButtonFrame = Frame(DataFrame2, bd=2, width=1350, height=70, padx=18, pady=10, bg="Ghost White", relief=RIDGE)
+        ButtonFrame = Frame(DataFrame2, bd=2, width=1350, height=40, padx=18, pady=10, bg="Ghost White", relief=RIDGE)
         ButtonFrame.pack(side=BOTTOM)
         
         DataFrame = Frame(MainFrame, bd=1, width=1300, height=400, padx=20, pady=20, relief=RIDGE, bg="cadet blue")
-        DataFrame.pack(side=BOTTOM)
+        DataFrame.pack(side=TOP)
 
         DataFrameLEFT = LabelFrame(DataFrame, bd=1, width=900, height=400, padx=20, relief=RIDGE, bg="Ghost White",
-                                   font=('Arial', 20,'bold'), text="Patient Info\n")
+                                   font=('Arial', 18,'bold'), text="Patient Info\n")
         DataFrameLEFT.pack(side=LEFT)
 
         DataFrameRIGHT = LabelFrame(DataFrame, bd=1, width=450, height=400, padx=31, pady = 3, relief=RIDGE, bg="Ghost White",
-                                   font=('Arial', 20,'bold'), text="Records\n")
+                                   font=('Arial', 18,'bold'), text="Records\n")
         DataFrameRIGHT.pack(side=RIGHT)
-
-       
 
         #==================Labels and Entry Widget==================
         self.lblPntID = Label(DataFrameLEFT, font=('Arial', 20, 'bold'), text="Patient ID:",padx=2, pady=2,bg="Ghost White")
