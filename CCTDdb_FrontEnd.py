@@ -1,6 +1,7 @@
 from tkinter import*
 import tkinter.messagebox
 import CCTDdb_BackEnd
+import time;
 import datetime
 
 #windows = Tk()
@@ -38,7 +39,19 @@ class Patient:
                 return
 
         def clearData(): #delete(0,END)
-            self.txtPntID.set("")
+            PntID.set("")
+            Firstname.set("")
+            Surname.set("")
+            DoB.set("")
+            Age.set("")
+            Gender.set("")
+            Address.set("")
+            MoNo.set("")
+            LastPersonContact.set("")
+            DateIssued.set("")
+            self.txtRecordings.delete("1.0",END)
+
+            """self.txtPntID.set("")
             self.txtfna.set("")
             self.txtSna.set("")
             self.txtDob.set("")
@@ -47,7 +60,7 @@ class Patient:
             self.txtAdr.set("")
             self.txtMoNo.set("")
             self.txtLastPC.set("")
-            self.txtRecordings.delete("1.0",END)
+            """
 
         def addData():
             if(len(PntID.get())!=0) :
@@ -56,8 +69,19 @@ class Patient:
                 Patientlist.delete(0,END)
                 Patientlist.insert(END,PntID.get(), Firstname.get(), Surname.get(), DoB.get(), Age.get(), Gender.get(), Address.get(), \
                         MoNo.get(), LastPersonContact.get())
+            
             DateIssued.set(time.strftime("%d/%m/%Y"))
             self.txtRecordings.insert(END,'Patient ID:\t\t' + PntID.get() + '\t\t' + DateIssued.get() + "\n")
+            self.txtRecordings.insert(END,'=====================================' + "\n")
+            self.txtRecordings.insert(END,'Firstname: \t\t\t\t' + Firstname.get()+ "\n")
+            self.txtRecordings.insert(END,'Surname: \t\t\t\t' + Surname.get()+ "\n")
+            self.txtRecordings.insert(END,'Date of Birth: \t\t\t\t' + DoB.get()+ "\n")
+            self.txtRecordings.insert(END,'Age: \t\t\t\t' + Age.get()+ "\n")
+            self.txtRecordings.insert(END,'Sex: \t\t\t\t' + Gender.get()+ "\n")
+            self.txtRecordings.insert(END,'Address: \t\t\t\t' + Address.get()+ "\n")
+            self.txtRecordings.insert(END,'Mobile Number: \t\t\t\t' + MoNo.get()+ "\n")
+            self.txtRecordings.insert(END,'Last Person in Contact: \t\t\t\t' + LastPersonContact.get()+ "\n")
+
 
 
         def displayData():
@@ -107,9 +131,22 @@ class Patient:
             if(len(PntID.get())!=0):
                 CCTDdb_BackEnd.AddPntRec(PntID.get(), Firstname.get(), Surname.get(), DoB.get(), Age.get(), Gender.get(), Address.get(), \
                         MoNo.get(), LastPersonContact.get())
-                Patientlist.delete(0,END)
+                """Patientlist.delete(0,END)
                 Patientlist.insert(END,PntID.get(), Firstname.get(), Surname.get(), DoB.get(), Age.get(), Gender.get(), Address.get(), \
-                        MoNo.get(), LastPersonContact.get())
+                        MoNo.get(), LastPersonContact.get())"""
+             
+            DateIssued.set(time.strftime("%d/%m/%Y"))
+            self.txtRecordings.insert(END,'Patient ID:\t\t' + PntID.get() + '\t\t' + DateIssued.get() + "\n")
+            self.txtRecordings.insert(END,'=====================================' + "\n")
+            self.txtRecordings.insert(END,'Firstname: \t\t\t\t' + Firstname.get()+ "\n")
+            self.txtRecordings.insert(END,'Surname: \t\t\t\t' + Surname.get()+ "\n")
+            self.txtRecordings.insert(END,'Date of Birth: \t\t\t\t' + DoB.get()+ "\n")
+            self.txtRecordings.insert(END,'Age: \t\t\t\t' + Age.get()+ "\n")
+            self.txtRecordings.insert(END,'Sex: \t\t\t\t' + Gender.get()+ "\n")
+            self.txtRecordings.insert(END,'Address: \t\t\t\t' + Address.get()+ "\n")
+            self.txtRecordings.insert(END,'Mobile Number: \t\t\t\t' + MoNo.get()+ "\n")
+            self.txtRecordings.insert(END,'Last Person in Contact: \t\t\t\t' + LastPersonContact.get()+ "\n")
+            
 
     #=========================FRAME=================================
         MainFrame = Frame(self.root, bg="cadet blue")
@@ -121,24 +158,25 @@ class Patient:
         #self.lblTit = Label(TitFrame, font=('arial', 47,'bold'),text="CCTD Management Systems", bg="Ghost White")
         #self.lblTit.grid()
         
+        
         DataFrame2 = Frame(MainFrame, bd=1, width=1300, height=400, padx=20, pady=20, relief=RIDGE, bg="cadet blue")
         DataFrame2.pack(side=BOTTOM)
 
-        ListFrame = LabelFrame(DataFrame2, bd=2, width=1350, height=180, padx=18, pady=10, relief=RIDGE, bg="Ghost White",
+        ListFrame = LabelFrame(DataFrame2, bd=2, width=1350, height=180, padx=90, pady=8, relief=RIDGE, bg="Ghost White",
                                     font=('Arial', 20,'bold'), text="Patient List Details\n")
         ListFrame.pack(side=TOP)
         
-        ButtonFrame = Frame(DataFrame2, bd=2, width=1350, height=40, padx=18, pady=10, bg="Ghost White", relief=RIDGE)
+        ButtonFrame = Frame(DataFrame2, bd=2, width=1350, height=40, padx=86, pady=8, bg="Ghost White", relief=RIDGE)
         ButtonFrame.pack(side=BOTTOM)
         
-        DataFrame = Frame(MainFrame, bd=1, width=1300, height=400, padx=20, pady=20, relief=RIDGE, bg="cadet blue")
+        DataFrame = Frame(MainFrame, bd=1, width=1300, height=400, padx=3, pady=90, relief=RIDGE, bg="cadet blue")
         DataFrame.pack(side=TOP)
 
-        DataFrameLEFT = LabelFrame(DataFrame, bd=1, width=900, height=200, padx=20, pady=6, relief=RIDGE, bg="Ghost White",
+        DataFrameLEFT = LabelFrame(DataFrame, bd=1, width=1536, height=500, padx=30, pady=6, relief=RIDGE, bg="Ghost White",
                                    font=('Arial', 18,'bold'), text="Patient Info\n")
         DataFrameLEFT.pack(side=LEFT)
 
-        DataFrameRIGHT = LabelFrame(DataFrame, bd=1, width=450, height=200, padx=31, pady = 9, relief=RIDGE, bg="Ghost White",
+        DataFrameRIGHT = LabelFrame(DataFrame, bd=1, width=1536, height=500, padx=300, pady = 22, relief=RIDGE, bg="Ghost White",
                                    font=('Arial', 18,'bold'), text="Records\n")
         DataFrameRIGHT.pack(side=RIGHT)
         
