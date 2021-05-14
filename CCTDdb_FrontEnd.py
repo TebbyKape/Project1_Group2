@@ -159,7 +159,7 @@ class Patient:
         #self.lblTit.grid()
         
         
-        DataFrame2 = Frame(MainFrame, bd=1, width=1300, height=400, padx=20, pady=20, relief=RIDGE, bg="PaleGreen1")
+        DataFrame2 = Frame(MainFrame, bd=1, width=1300, height=400, padx=20, pady=20, relief=RIDGE, bg="PaleGreen2")
         DataFrame2.pack(side=BOTTOM)
 
         ListFrame = LabelFrame(DataFrame2, bd=2, width=1350, height=180, padx=90, pady=8, relief=RIDGE, bg="DarkSeaGreen3",
@@ -169,7 +169,7 @@ class Patient:
         ButtonFrame = Frame(DataFrame2, bd=2, width=1350, height=40, padx=86, pady=8, bg="DarkSeaGreen3", relief=RIDGE)
         ButtonFrame.pack(side=BOTTOM)
         
-        DataFrame = Frame(MainFrame, bd=1, width=1300, height=400, padx=3, pady=90, relief=RIDGE, bg="PaleGreen1")
+        DataFrame = Frame(MainFrame, bd=1, width=1300, height=400, padx=3, pady=90, relief=RIDGE, bg="PaleGreen2")
         DataFrame.pack(side=TOP)
 
         DataFrameLEFT = LabelFrame(DataFrame, bd=1, width=1536, height=500, padx=30, pady=6, relief=RIDGE, bg="DarkSeaGreen3",
