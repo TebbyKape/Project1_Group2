@@ -18,7 +18,7 @@ class Patient:
         root.overrideredirect(False)
         root.attributes('-fullscreen',True)
         #self.root.geometry("%dx%d" % (width,height))
-        self.root.config(bg="cadet blue")
+        self.root.config(bg="DarkSeaGreen3")
 
         PntID = StringVar ()
         Firstname = StringVar ()
@@ -149,34 +149,34 @@ class Patient:
             
 
     #=========================FRAME=================================
-        MainFrame = Frame(self.root, bg="cadet blue")
+        MainFrame = Frame(self.root, bg="DarkSeaGreen3")
         MainFrame.grid()
 
-        #TitFrame = Frame(MainFrame, bd=2, padx=54, pady=8, bg="Ghost White", relief=RIDGE)
+        #TitFrame = Frame(MainFrame, bd=2, padx=54, pady=8, bg="DarkSeaGreen3", relief=RIDGE)
         #TitFrame.pack(side=TOP)
 
-        #self.lblTit = Label(TitFrame, font=('arial', 47,'bold'),text="CCTD Management Systems", bg="Ghost White")
+        #self.lblTit = Label(TitFrame, font=('arial', 47,'bold'),text="CCTD Management Systems", bg="DarkSeaGreen3")
         #self.lblTit.grid()
         
         
-        DataFrame2 = Frame(MainFrame, bd=1, width=1300, height=400, padx=20, pady=20, relief=RIDGE, bg="cadet blue")
+        DataFrame2 = Frame(MainFrame, bd=1, width=1300, height=400, padx=20, pady=20, relief=RIDGE, bg="PaleGreen1")
         DataFrame2.pack(side=BOTTOM)
 
-        ListFrame = LabelFrame(DataFrame2, bd=2, width=1350, height=180, padx=90, pady=8, relief=RIDGE, bg="Ghost White",
+        ListFrame = LabelFrame(DataFrame2, bd=2, width=1350, height=180, padx=90, pady=8, relief=RIDGE, bg="DarkSeaGreen3",
                                     font=('Arial', 20,'bold'), text="Patient List Details\n")
         ListFrame.pack(side=TOP)
         
-        ButtonFrame = Frame(DataFrame2, bd=2, width=1350, height=40, padx=86, pady=8, bg="Ghost White", relief=RIDGE)
+        ButtonFrame = Frame(DataFrame2, bd=2, width=1350, height=40, padx=86, pady=8, bg="DarkSeaGreen3", relief=RIDGE)
         ButtonFrame.pack(side=BOTTOM)
         
-        DataFrame = Frame(MainFrame, bd=1, width=1300, height=400, padx=3, pady=90, relief=RIDGE, bg="cadet blue")
+        DataFrame = Frame(MainFrame, bd=1, width=1300, height=400, padx=3, pady=90, relief=RIDGE, bg="PaleGreen1")
         DataFrame.pack(side=TOP)
 
-        DataFrameLEFT = LabelFrame(DataFrame, bd=1, width=1536, height=500, padx=30, pady=6, relief=RIDGE, bg="Ghost White",
+        DataFrameLEFT = LabelFrame(DataFrame, bd=1, width=1536, height=500, padx=30, pady=6, relief=RIDGE, bg="DarkSeaGreen3",
                                    font=('Arial', 18,'bold'), text="Patient Info\n")
         DataFrameLEFT.pack(side=LEFT)
 
-        DataFrameRIGHT = LabelFrame(DataFrame, bd=1, width=1536, height=500, padx=300, pady = 22, relief=RIDGE, bg="Ghost White",
+        DataFrameRIGHT = LabelFrame(DataFrame, bd=1, width=1536, height=500, padx=300, pady = 22, relief=RIDGE, bg="DarkSeaGreen3",
                                    font=('Arial', 18,'bold'), text="Records\n")
         DataFrameRIGHT.pack(side=RIGHT)
         
@@ -185,47 +185,47 @@ class Patient:
         self.txtRecordings.grid(row=0, column=0)
 
         #==================Labels and Entry Widget==================
-        self.lblPntID = Label(DataFrameLEFT, font=('Arial', 14, 'bold'), text="Patient ID:",padx=2, pady=2,bg="Ghost White")
+        self.lblPntID = Label(DataFrameLEFT, font=('Arial', 14, 'bold'), text="Patient ID:",padx=2, pady=2,bg="DarkSeaGreen3")
         self.lblPntID.grid(row=0, column=0, sticky=W)
         self.txtPntID = Entry(DataFrameLEFT, font=('Arial', 14, 'bold'), textvariable=PntID,width=28)
         self.txtPntID.grid(row=0, column=1)
 
-        self.lblfna = Label(DataFrameLEFT, font=('Arial', 14, 'bold'), text="First Name:",padx=2, pady=2,bg="Ghost White")
+        self.lblfna = Label(DataFrameLEFT, font=('Arial', 14, 'bold'), text="First Name:",padx=2, pady=2,bg="DarkSeaGreen3")
         self.lblfna.grid(row=1, column=0, sticky=W)
         self.txtfna = Entry(DataFrameLEFT, font=('Arial', 14, 'bold'), textvariable=Firstname,width=28)
         self.txtfna.grid(row=1, column=1)
 
-        self.lblSna = Label(DataFrameLEFT, font=('Arial', 14, 'bold'), text="Surname:",padx=2, pady=2,bg="Ghost White")
+        self.lblSna = Label(DataFrameLEFT, font=('Arial', 14, 'bold'), text="Surname:",padx=2, pady=2,bg="DarkSeaGreen3")
         self.lblSna.grid(row=2, column=0, sticky=W)
         self.txtSna = Entry(DataFrameLEFT, font=('Arial', 14, 'bold'), textvariable=Surname,width=28)
         self.txtSna.grid(row=2, column=1)
 
-        self.lblDob = Label(DataFrameLEFT, font=('Arial', 14, 'bold'), text="Date of Birth:",padx=2, pady=2,bg="Ghost White")
+        self.lblDob = Label(DataFrameLEFT, font=('Arial', 14, 'bold'), text="Date of Birth:",padx=2, pady=2,bg="DarkSeaGreen3")
         self.lblDob.grid(row=3, column=0, sticky=W)
         self.txtDob = Entry(DataFrameLEFT, font=('Arial', 14, 'bold'), textvariable=DoB,width=28)
         self.txtDob.grid(row=3, column=1)
 
-        self.lblAge = Label(DataFrameLEFT, font=('Arial', 14, 'bold'), text="Age:",padx=2, pady=2,bg="Ghost White")
+        self.lblAge = Label(DataFrameLEFT, font=('Arial', 14, 'bold'), text="Age:",padx=2, pady=2,bg="DarkSeaGreen3")
         self.lblAge.grid(row=4, column=0, sticky=W)
         self.txtAge = Entry(DataFrameLEFT, font=('Arial', 14, 'bold'), textvariable=Age,width=28)
         self.txtAge.grid(row=4, column=1)
 
-        self.lblGender = Label(DataFrameLEFT, font=('Arial', 14, 'bold'), text="Gender:",padx=2, pady=2,bg="Ghost White")
+        self.lblGender = Label(DataFrameLEFT, font=('Arial', 14, 'bold'), text="Gender:",padx=2, pady=2,bg="DarkSeaGreen3")
         self.lblGender.grid(row=5, column=0, sticky=W)
         self.txtGender = Entry(DataFrameLEFT, font=('Arial', 14, 'bold'), textvariable=Gender,width=28)
         self.txtGender.grid(row=5, column=1)
 
-        self.lblAdr = Label(DataFrameLEFT, font=('Arial', 14, 'bold'), text="Address:",padx=2, pady=2,bg="Ghost White")
+        self.lblAdr = Label(DataFrameLEFT, font=('Arial', 14, 'bold'), text="Address:",padx=2, pady=2,bg="DarkSeaGreen3")
         self.lblAdr.grid(row=6, column=0, sticky=W)
         self.txtAdr = Entry(DataFrameLEFT, font=('Arial', 14, 'bold'), textvariable=Address,width=28)
         self.txtAdr.grid(row=6, column=1)
 
-        self.lblMoNo = Label(DataFrameLEFT, font=('Arial', 14, 'bold'), text="Mobile No:",padx=2, pady=2,bg="Ghost White")
+        self.lblMoNo = Label(DataFrameLEFT, font=('Arial', 14, 'bold'), text="Mobile No:",padx=2, pady=2,bg="DarkSeaGreen3")
         self.lblMoNo.grid(row=7, column=0, sticky=W)
         self.txtMoNo = Entry(DataFrameLEFT, font=('Arial', 14, 'bold'), textvariable=MoNo,width=28)
         self.txtMoNo.grid(row=7, column=1)
 
-        self.lblLastPC = Label(DataFrameLEFT, font=('Arial', 14, 'bold'), text="Last Person Contact:",padx=2, pady=2,bg="Ghost White")
+        self.lblLastPC = Label(DataFrameLEFT, font=('Arial', 14, 'bold'), text="Last Person Contact:",padx=2, pady=2,bg="DarkSeaGreen3")
         self.lblLastPC.grid(row=8, column=0, sticky=W)
         self.txtLastPC = Entry(DataFrameLEFT, font=('Arial', 14, 'bold'), textvariable=LastPersonContact,width=28)
         self.txtLastPC.grid(row=8, column=1)
