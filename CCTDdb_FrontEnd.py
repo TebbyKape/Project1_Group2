@@ -66,9 +66,9 @@ class Patient:
             if(len(PntID.get())!=0) :
                 CCTDdb_BackEnd.AddPntRec(PntID.get(), Firstname.get(), Surname.get(), DoB.get(), Age.get(), Gender.get(), Address.get(), \
                         MoNo.get(), LastPersonContact.get())
-                Patientlist.delete(0,END)
+                """Patientlist.delete(0,END)
                 Patientlist.insert(END,PntID.get(), Firstname.get(), Surname.get(), DoB.get(), Age.get(), Gender.get(), Address.get(), \
-                        MoNo.get(), LastPersonContact.get())
+                        MoNo.get(), LastPersonContact.get())"""
             
             DateIssued.set(time.strftime("%d/%m/%Y"))
             self.txtRecordings.insert(END,'Patient ID:\t\t' + PntID.get() + '\t\t' + DateIssued.get() + "\n")
