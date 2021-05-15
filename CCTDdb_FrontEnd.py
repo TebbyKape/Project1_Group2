@@ -137,7 +137,7 @@ class Patient:
              
             DateIssued.set(time.strftime("%d/%m/%Y"))
             self.txtRecordings.insert(END,'Patient ID:\t\t' + PntID.get() + '\t\t' + DateIssued.get() + "\n")
-            self.txtRecordings.insert(END,'=====================================' + "\n")
+            self.txtRecordings.insert(END,'================================================================================' + "\n")
             self.txtRecordings.insert(END,'Firstname: \t\t\t\t' + Firstname.get()+ "\n")
             self.txtRecordings.insert(END,'Surname: \t\t\t\t' + Surname.get()+ "\n")
             self.txtRecordings.insert(END,'Date of Birth: \t\t\t\t' + DoB.get()+ "\n")
@@ -152,36 +152,36 @@ class Patient:
         MainFrame = Frame(self.root, bg="DarkSeaGreen3")
         MainFrame.grid()
 
-        #TitFrame = Frame(MainFrame, bd=2, padx=54, pady=8, bg="DarkSeaGreen3", relief=RIDGE)
-        #TitFrame.pack(side=TOP)
+        TitFrame = Frame(MainFrame, bd=2, padx=54, pady=8, bg="DarkSeaGreen3", relief=RIDGE)
+        TitFrame.pack(side=TOP)
 
-        #self.lblTit = Label(TitFrame, font=('arial', 47,'bold'),text="CCTD Management Systems", bg="DarkSeaGreen3")
-        #self.lblTit.grid()
+        self.lblTit = Label(TitFrame, font=('arial', 47,'bold'),text="CCTD Management Systems", bg="DarkSeaGreen3")
+        self.lblTit.grid()
         
         
         DataFrame2 = Frame(MainFrame, bd=1, width=1300, height=400, padx=20, pady=20, relief=RIDGE, bg="PaleGreen2")
         DataFrame2.pack(side=BOTTOM)
 
-        ListFrame = LabelFrame(DataFrame2, bd=2, width=1350, height=180, padx=90, pady=8, relief=RIDGE, bg="DarkSeaGreen3",
+        ListFrame = LabelFrame(DataFrame2, bd=2, width=2560, height=200, padx=90, pady=10, relief=RIDGE, bg="DarkSeaGreen3",
                                     font=('Arial', 20,'bold'), text="Patient List Details\n")
         ListFrame.pack(side=TOP)
         
-        ButtonFrame = Frame(DataFrame2, bd=2, width=1350, height=40, padx=86, pady=8, bg="DarkSeaGreen3", relief=RIDGE)
+        ButtonFrame = Frame(DataFrame2, bd=2, width=1350, height=40, padx=86, pady=10, bg="DarkSeaGreen3", relief=RIDGE)
         ButtonFrame.pack(side=BOTTOM)
         
-        DataFrame = Frame(MainFrame, bd=1, width=1300, height=400, padx=3, pady=90, relief=RIDGE, bg="PaleGreen2")
+        DataFrame = Frame(MainFrame, bd=1, width=2560, height=400, padx=30, pady=7, relief=RIDGE, bg="PaleGreen2")
         DataFrame.pack(side=TOP)
 
-        DataFrameLEFT = LabelFrame(DataFrame, bd=1, width=1536, height=500, padx=30, pady=6, relief=RIDGE, bg="DarkSeaGreen3",
+        DataFrameLEFT = LabelFrame(DataFrame, bd=1, width=5700, height=800, padx=30, pady=38, relief=RIDGE, bg="DarkSeaGreen3",
                                    font=('Arial', 18,'bold'), text="Patient Info\n")
         DataFrameLEFT.pack(side=LEFT)
 
-        DataFrameRIGHT = LabelFrame(DataFrame, bd=1, width=1536, height=500, padx=300, pady = 22, relief=RIDGE, bg="DarkSeaGreen3",
+        DataFrameRIGHT = LabelFrame(DataFrame, bd=1, width=1536, height=800, padx=30, pady = 3, relief=RIDGE, bg="DarkSeaGreen3",
                                    font=('Arial', 18,'bold'), text="Records\n")
         DataFrameRIGHT.pack(side=RIGHT)
         
         #==================Recordings==================
-        self.txtRecordings = Text (DataFrameRIGHT, height = 13, width=43, bd=1, font=('arial', 11, 'bold'))
+        self.txtRecordings = Text (DataFrameRIGHT, height = 14, width=65, bd=1, font=('Arial', 15, 'bold'))
         self.txtRecordings.grid(row=0, column=0)
 
         #==================Labels and Entry Widget==================
