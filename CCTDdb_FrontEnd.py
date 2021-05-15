@@ -9,7 +9,6 @@ import datetime
 class Patient:
     def __init__(self, root):
         
-        
         self.root = root
         self.root.title("Covid Contact Tracing Database Management System")
        #width= window.winfo_screenwidth() 
@@ -72,7 +71,7 @@ class Patient:
             
             DateIssued.set(time.strftime("%d/%m/%Y"))
             self.txtRecordings.insert(END,'Patient ID:\t\t' + PntID.get() + '\t\t' + DateIssued.get() + "\n")
-            self.txtRecordings.insert(END,'=====================================' + "\n")
+            self.txtRecordings.insert(END,'===========================================================' + "\n")
             self.txtRecordings.insert(END,'Firstname: \t\t\t\t' + Firstname.get()+ "\n")
             self.txtRecordings.insert(END,'Surname: \t\t\t\t' + Surname.get()+ "\n")
             self.txtRecordings.insert(END,'Date of Birth: \t\t\t\t' + DoB.get()+ "\n")
@@ -137,7 +136,7 @@ class Patient:
              
             DateIssued.set(time.strftime("%d/%m/%Y"))
             self.txtRecordings.insert(END,'Patient ID:\t\t' + PntID.get() + '\t\t' + DateIssued.get() + "\n")
-            self.txtRecordings.insert(END,'================================================================================' + "\n")
+            self.txtRecordings.insert(END,'===========================================================' + "\n")
             self.txtRecordings.insert(END,'Firstname: \t\t\t\t' + Firstname.get()+ "\n")
             self.txtRecordings.insert(END,'Surname: \t\t\t\t' + Surname.get()+ "\n")
             self.txtRecordings.insert(END,'Date of Birth: \t\t\t\t' + DoB.get()+ "\n")
@@ -146,6 +145,7 @@ class Patient:
             self.txtRecordings.insert(END,'Address: \t\t\t\t' + Address.get()+ "\n")
             self.txtRecordings.insert(END,'Mobile Number: \t\t\t\t' + MoNo.get()+ "\n")
             self.txtRecordings.insert(END,'Last Person in Contact: \t\t\t\t' + LastPersonContact.get()+ "\n")
+            self.txtRecordings.insert(END,"\n")
             
 
     #=========================FRAME=================================
