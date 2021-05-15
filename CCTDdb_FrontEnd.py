@@ -169,7 +169,7 @@ class Patient:
         ButtonFrame = Frame(DataFrame2, bd=2, width=1350, height=40, padx=86, pady=10, bg="DarkSeaGreen3", relief=RIDGE)
         ButtonFrame.pack(side=BOTTOM)
         
-        DataFrame = Frame(MainFrame, bd=1, width=2560, height=400, padx=30, pady=7, relief=RIDGE, bg="PaleGreen2")
+        DataFrame = Frame(MainFrame, bd=1, width=9060, height=400, padx=87, pady=7, relief=RIDGE, bg="PaleGreen2")
         DataFrame.pack(side=TOP)
 
         DataFrameLEFT = LabelFrame(DataFrame, bd=1, width=5700, height=800, padx=30, pady=38, relief=RIDGE, bg="DarkSeaGreen3",
