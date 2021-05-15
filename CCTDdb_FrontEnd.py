@@ -149,24 +149,24 @@ class Patient:
             
 
     #=========================FRAME=================================
-        MainFrame = Frame(self.root, bg="DarkSeaGreen3")
+        MainFrame = Frame(self.root, bg="PaleGreen2")
         MainFrame.grid()
 
-        TitFrame = Frame(MainFrame, bd=2, padx=54, pady=8, bg="DarkSeaGreen3", relief=RIDGE)
+        TitFrame = Frame(MainFrame, bd=2, padx=54, pady=8, bg="light cyan", relief=RIDGE)
         TitFrame.pack(side=TOP)
 
-        self.lblTit = Label(TitFrame, font=('arial', 47,'bold'),text="CCTD Management Systems", bg="DarkSeaGreen3")
+        self.lblTit = Label(TitFrame, font=('arial', 47,'bold'),text="CCTD Management Systems", bg="light cyan")
         self.lblTit.grid()
         
         
         DataFrame2 = Frame(MainFrame, bd=1, width=1300, height=400, padx=20, pady=20, relief=RIDGE, bg="PaleGreen2")
         DataFrame2.pack(side=BOTTOM)
 
-        ListFrame = LabelFrame(DataFrame2, bd=2, width=2560, height=200, padx=90, pady=10, relief=RIDGE, bg="DarkSeaGreen3",
+        ListFrame = LabelFrame(DataFrame2, bd=2, width=2560, height=200, padx=90, pady=5, relief=RIDGE, bg="DarkSeaGreen3",
                                     font=('Arial', 20,'bold'), text="Patient List Details\n")
         ListFrame.pack(side=TOP)
         
-        ButtonFrame = Frame(DataFrame2, bd=2, width=1350, height=40, padx=86, pady=10, bg="DarkSeaGreen3", relief=RIDGE)
+        ButtonFrame = Frame(DataFrame2, bd=2, width=1350, height=300, padx=51, pady=15, bg="DarkSeaGreen3", relief=RIDGE)
         ButtonFrame.pack(side=BOTTOM)
         
         DataFrame = Frame(MainFrame, bd=1, width=9060, height=400, padx=87, pady=7, relief=RIDGE, bg="PaleGreen2")
@@ -240,25 +240,25 @@ class Patient:
         scrollbar.config(command = Patientlist.yview)
 
         #===================================Button Widget==================================
-        self.btnAddData = Button(ButtonFrame, text="Add New",font=('Arial', 12, 'bold'), height=1, width=16, bd=2, padx=13, command=addData)
+        self.btnAddData = Button(ButtonFrame, text="Add New",font=('Arial', 12, 'bold'), height=2, width=18, bd=2, padx=5, command=addData)
         self.btnAddData.grid(row=0, column=0)
 
-        self.btnDisplayData = Button(ButtonFrame, text="Display",font=('Arial', 12, 'bold'), height=1, width=16, bd=2, padx=9, command=displayData)
+        self.btnDisplayData = Button(ButtonFrame, text="Display",font=('Arial', 12, 'bold'), height=2, width=18, bd=2, padx=5, command=displayData)
         self.btnDisplayData.grid(row=0, column=1)
 
-        self.btnClearData = Button(ButtonFrame, text="Clear",font=('Arial', 12, 'bold'), height=1, width=16, bd=2, padx=9, command=clearData)
+        self.btnClearData = Button(ButtonFrame, text="Clear",font=('Arial', 12, 'bold'), height=2, width=18, bd=2, padx=5, command=clearData)
         self.btnClearData.grid(row=0, column=2)
 
-        self.btnDeleteData = Button(ButtonFrame, text="Delete",font=('Arial', 12, 'bold'), height=1, width=16, bd=2, padx=9, command=deleteData)
+        self.btnDeleteData = Button(ButtonFrame, text="Delete",font=('Arial', 12, 'bold'), height=2, width=18, bd=2, padx=5, command=deleteData)
         self.btnDeleteData.grid(row=0, column=3)
 
-        self.btnSearchData = Button(ButtonFrame, text="Search",font=('Arial', 12, 'bold'), height=1, width=16, bd=2, padx=9, command=SearchData)
+        self.btnSearchData = Button(ButtonFrame, text="Search",font=('Arial', 12, 'bold'), height=2, width=18, bd=2, padx=5, command=SearchData)
         self.btnSearchData.grid(row=0, column=4)
 
-        self.btnUpdateData = Button(ButtonFrame, text="Update",font=('Arial', 12, 'bold'), height=1, width=16, bd=2, padx=9, command=update)
+        self.btnUpdateData = Button(ButtonFrame, text="Update",font=('Arial', 12, 'bold'), height=2, width=18, bd=2, padx=5, command=update)
         self.btnUpdateData.grid(row=0, column=5)
 
-        self.btnExit = Button(ButtonFrame, text="Exit",font=('Arial', 12, 'bold'), height=1, width=16,bd=2, padx=12, command = iExit)
+        self.btnExit = Button(ButtonFrame, text="Exit",font=('Arial', 12, 'bold'),height=2, width=18, bd=2, padx=5, command = iExit)
         self.btnExit.grid(row=0, column=6)
 
 
