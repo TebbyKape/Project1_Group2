@@ -16,9 +16,15 @@ Additional Information can be found in the link below.
 https://mymailmapuaedu-my.sharepoint.com/:w:/g/personal/srviste_mymail_mapua_edu_ph/EZoguaD_SNtCvv2MBrXbvAoB6nJxY_uPNtXZ37WE4xIAOQ?e=glXqeA
 
 Two methods to run the program:
-1. Use the Shortcut link "OFFICIAL CCT  DAMS Program", found at program folder PythonApplication1
+1. Use the Shortcut link "OFFICIAL CCT  DAMS Program", found at program folder PythonApplication1 or 
+go to downloaded folder of PythonApplication1 >> Executable Files >> CCTDdb_FrontEnd>> find Application file "OFFICIAL CCT  DAMS Program" >> open/double click.
+Running with this method would mean that the database will be located at the said Executable Files/CCTDdb_FrontEnd folder.
 
-2. Go to program folder PythonApplication1 >> dist >> CCTDdb_FrontEnd>> find Application file "OFFICIAL CCT  DAMS Program" >> open/double click
+2. Go to downloaded folder of PythonApplication1 >> Editable Files. In command terminal, run the CCTDdb_FrontEnd.py. Running with this method would
+mean that the database used is in the current folder where the said python file is located.
+
+Note: Running the different methods may update different databases as the location of each method done will only change the database located in
+their specified folder.
 
 Group members:
 CARL MICHAEL MARTE
