@@ -23,8 +23,10 @@ Running with this method would mean that the database will be located at the sai
 2. Go to downloaded folder of PythonApplication1 >> Editable Files. In command terminal, run the CCTDdb_FrontEnd.py. Running with this method would
 mean that the database used is in the current folder where the said python file is located.
 
-Note: Running the different methods may update different databases as the location of each method done will only change the database located in
+Patch Notes(May 16, 2021):
+1. Running the different methods may update different databases as the location of each method done will only change the database located in
 their specified folder.
+2. The program is scaled on a display resolution of 1920x1080.
 
 Group members:
 CARL MICHAEL MARTE
